@@ -66,7 +66,7 @@ export default class SimpleDemo {
 
   initCamera() {
     const camera = this.camera = new PerspectiveCamera(70, this.options.width/this.options.height, 1, 10000)
-    camera.position.set(0, 50, 100)
+    camera.position.set(0, 50, 50)
     camera.lookAt(new Vector3(0, 0, 0))
     this.scene.add(camera)
   }
@@ -85,7 +85,6 @@ export default class SimpleDemo {
         if (child instanceof Mesh) {
           child.material.side = THREE.DoubleSide
           this.scene.add(obj)
-          this.render()
         }
       })
     })
@@ -102,7 +101,7 @@ export default class SimpleDemo {
     controls.noPan = false
     controls.staticMoving = true
     controls.dynamicDampingFactor = 0.3
-    controls.minDistance = 200
+    controls.minDistance = 10
     controls.maxDistance = 800
   }
 
